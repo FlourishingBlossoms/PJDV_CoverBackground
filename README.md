@@ -58,6 +58,41 @@ src/                     BgToggle 源码（C++，DivaModLoader 插件模板写�
 - [DivaModManager](https://gamebanana.com/tools/9712)
 - [WannaCri GUI](https://github.com/hiki8man/Wannacri_GUI)（hiki8man）
 
+## 让 AI 帮你做（推荐）
+
+本仓库的整套流程就是和 AI 助手（Claude Code / Codex / Cursor / 豆包等能读写文件、执行命令的 Agent）一起做出来的。
+你不需要懂脚本，把下面这段**整段复制**给 AI，填好开头的三个路径即可：
+
+```text
+你是一个 Windows 上的 Mod 制作助手。目标：为《初音未来 歌姬计划 Mega Mix+》做"每首歌专属静态背景"DLC（DarkMV mod）。
+
+先读这两个文件再动手：
+- https://github.com/FlourishingBlossoms/PJDV_CoverBackground 的 README.md
+- 同仓库 tools/README.md
+
+环境：
+- 游戏目录：<例如 F:\SteamLibrary\steamapps\common\Hatsune Miku Project DIVA Mega Mix Plus>
+- WannaCri GUI 目录：<例如 C:\Users\你\Downloads\wannacri_qt_zh_cn>（内含 convert_GUI.exe 和 ffmpeg\ 文件夹）
+- 图片来源：<A. 我提供图片文件夹  B. 从我的游戏素材导出  C. 让我逐首给你截图>
+
+请按步骤执行，每步完成告诉我结果：
+1. 建索引：扫描 游戏目录\mods\*\rom\mod_pv_db*.txt，解析 "pv_XXXX.song_name=" 行，生成"歌名 → pv 编号 → 所属曲包"的 CSV/表格
+2. 准备图片：按 pv_编号.png 命名，铺满 1920x1080（图片方案 B 时，用 tools/usm_to_images.py 从已有 DarkMV usm 导出，或从曲包素材解析）
+3. 生成：调用 tools/build_from_images.py，参数按需（--gray 去色、--dim 0.9 压暗、--title-csv 加歌名/署名、--font 指定中文字体）
+4. 安装：把生成的 pv_*.usm 放进 游戏目录\mods\DarkMV\rom\movie\；确认 DarkMV\config.toml 里 enabled=true；如缺 BgToggle 就从仓库复制 mods\BgToggle 过去
+5. 校验：逐个检查 usm 大小 >2KB、可解析、帧数 ≤10；输出成功/失败清单（失败的单独重跑）
+6. 汇报：告诉我进哪几首歌验收、怎么回滚（删 mods\DarkMV 或 F10 关闭）
+
+硬性约束：
+- 只改 游戏目录\mods\ 下的文件，绝不碰游戏本体 exe/cpk/存档
+- convert_GUI.exe 必须从它自己的目录启动（它按相对路径找 ffmpeg）
+- 转换串行跑（单首 3-10 秒），不要同时开多个转换窗口
+- 游戏在运行时先让我退出，再写 mods
+- 素材只在我本机使用，不上传
+```
+
+AI 做不到或写错时，按 [tools/README.md](tools/README.md) 手动执行同样的步骤即可。
+
 ## 许可
 
 MIT（见 [LICENSE](LICENSE)）。生成的 `.usm` 素材来自你自己的游戏环境，不在 MIT 授权范围内。

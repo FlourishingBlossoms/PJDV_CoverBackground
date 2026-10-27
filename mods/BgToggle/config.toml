@@ -1,0 +1,9 @@
+enabled = 1
+dll = ["BgToggle.dll"]
+
+name = "Bg Toggle"
+version = "1.0.0"
+author = "self"
+
+# F10 游戏内菜单：切换 2D 静态背景开/关（重启游戏生效）
+# 注意：不要在 DivaModManager 里切换本 mod（会丢 dll 行）

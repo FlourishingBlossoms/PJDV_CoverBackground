@@ -1,0 +1,8 @@
+enabled = true
+include = ["."]
+
+name = "Dark MV (video replacement)"
+version = "1.1"
+author = "self"
+
+# 每首歌自己 MV 的暗色静态帧; 关闭=恢复原版 MV (重启游戏生效)

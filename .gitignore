@@ -1,0 +1,6 @@
+﻿*.log
+_tmp*
+output/
+*.ivf
+*.mp4
+*.png.tmp

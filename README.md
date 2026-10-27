@@ -16,6 +16,9 @@
 | `mods/DarkMV` | 覆盖全部视频类（2D）歌曲的 `rom/movie/pv_*.usm`，换成该曲的静态合成图 |
 | `mods/BgToggle` | **F10** 游戏内面板：一键开关 DarkMV（重启后生效），免去进 DivaModManager |
 
+> 📦 **开箱即用下载**：[Releases](https://github.com/FlourishingBlossoms/PJDV_CoverBackground/releases)（`DIVA-BackgroundSwap-mods.zip`，含两个模组文件夹，解压后放进 `mods/` 即可）
+> 仓库内 `.usm` 走 Git LFS，直接 clone 会消耗 LFS 流量，**建议优先下 Release**。
+
 - 3D 歌曲（实时渲染舞台）**不受影响**，本 Mod 只处理视频类 MV
 - 原版 MV 随时可恢复：BgToggle 里关掉，或在 DivaModManager 停用 DarkMV
 

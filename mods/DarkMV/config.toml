@@ -1,8 +1,9 @@
-enabled = true
+﻿enabled = true
 include = ["."]
 
-name = "Dark MV (video replacement)"
-version = "1.1"
-author = "self"
+name = "Dark MV (static background)"
+version = "1.0"
+author = "you"
 
-# 每首歌自己 MV 的暗色静态帧; 关闭=恢复原版 MV (重启游戏生效)
+# 把 tools/build_from_images.py 生成的 pv_*.usm 放进 rom/movie/
+# 关闭本 mod（或在 BgToggle 里 F10 关掉）= 恢复原版 MV

@@ -1,6 +1,5 @@
 ﻿*.log
-_tmp*
 output/
 *.ivf
 *.mp4
-*.png.tmp
+mods/DarkMV/rom/movie/*.usm

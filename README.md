@@ -60,7 +60,7 @@ src/                     BgToggle 源码（C++，DivaModLoader 插件模板写�
 
 ## 让 AI 帮你做（推荐）
 
-本仓库的整套流程就是和 AI 助手（Claude Code / Codex / Cursor / 豆包等能读写文件、执行命令的 Agent）一起做出来的。
+本仓库的整套流程就是和 AI 助手（DSH,ZCODE）一起做出来的。
 你不需要懂脚本，把下面这段**整段复制**给 AI，填好开头的三个路径即可：
 
 ```text
